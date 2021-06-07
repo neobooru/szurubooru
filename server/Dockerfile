@@ -81,8 +81,7 @@ RUN apk --no-cache add \
     && chown -R app:app /opt/app /data
 
 USER app
-ENTRYPOINT ["hupper", "-m", "waitress"]
-CMD ["--port", "6666", "szurubooru.facade:app"]
+CMD ["/opt/app/docker-start-dev.sh"]
 
 ARG PORT=6666
 ENV PORT=${PORT}
