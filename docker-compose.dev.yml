@@ -2,7 +2,9 @@ version: "2"
 
 services:
   server:
-    image: szurubooru/server:latest
+    build:
+      context: ./server
+      target: development
     depends_on:
       - sql
     environment:
@@ -17,18 +19,18 @@ services:
       #POSTGRES_PORT: 5432
       #LOG_SQL: 0 (1 for verbose SQL logs)
     volumes:
-      - "${MOUNT_DATA}:/data"
-      - "./server/config.yaml:/opt/app/config.yaml"
+      - "data:/data"
+      - "./server/:/opt/app/"
 
   client:
-    image: szurubooru/client:latest
+    build: ./client
     depends_on:
       - server
     environment:
       BACKEND_HOST: server
       BASE_URL:
     volumes:
-      - "${MOUNT_DATA}:/data:ro"
+      - "data:/data:ro"
     ports:
       - "${PORT}:80"
 
@@ -39,4 +41,8 @@ services:
       POSTGRES_USER:
       POSTGRES_PASSWORD:
     volumes:
-      - "${MOUNT_SQL}:/var/lib/postgresql/data"
+      - "sql:/var/lib/postgresql/data"
+
+volumes:
+  data:
+  sql:
