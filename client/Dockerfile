@@ -43,3 +43,27 @@ LABEL \
     org.opencontainers.image.source="https://github.com/rr-/szurubooru" \
     org.opencontainers.image.revision="${SOURCE_COMMIT}" \
     org.opencontainers.image.licenses="GPL-3.0"
+
+
+FROM node:lts-alpine as development
+WORKDIR /opt/app
+
+RUN apk --no-cache add \
+    dumb-init \
+    nginx \
+    git \
+    && npm install -g npm@lts
+
+RUN ln -sf /opt/app/nginx.conf.docker /etc/nginx/nginx.conf
+RUN rm -rf /var/www
+RUN ln -sf /opt/app/public/ /var/www
+
+COPY package.json package-lock.json ./
+RUN npm install
+
+ARG BUILD_INFO="docker-development"
+ENV BUILD_INFO=${BUILD_INFO}
+ENV BACKEND_HOST="server"
+
+CMD ["/opt/app/docker-start-dev.sh"]
+VOLUME ["/data"]

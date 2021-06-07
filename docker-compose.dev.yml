@@ -23,16 +23,18 @@ services:
       - "./server/:/opt/app/"
 
   client:
-    build: ./client
+    build:
+      context: ./client
+      target: development
     depends_on:
       - server
-    environment:
-      BACKEND_HOST: server
-      BASE_URL:
     volumes:
       - "data:/data:ro"
+      - "./client/:/opt/app/"
+      - "/opt/app/public/"
     ports:
       - "${PORT}:80"
+      - "8081:8081"
 
   sql:
     image: postgres:11-alpine
