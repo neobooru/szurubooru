@@ -18,9 +18,13 @@ services:
       #POSTGRES_DB: defaults to same as POSTGRES_USER
       #POSTGRES_PORT: 5432
       #LOG_SQL: 0 (1 for verbose SQL logs)
+      DEBUG: 1
+      WAIT_FOR_CLIENT: 0
     volumes:
       - "data:/data"
       - "./server/:/opt/app/"
+    ports:
+      - "5678:5678"
 
   client:
     build:

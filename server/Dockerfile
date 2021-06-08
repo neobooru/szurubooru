@@ -75,6 +75,7 @@ RUN apk --no-cache add \
     py3-waitress \
     && pip3 install --no-cache-dir --disable-pip-version-check \
     hupper \
+    debugpy \
     && mkdir -p /opt/app /data \
     && addgroup -g ${PGID} app \
     && adduser -SDH -h /opt/app -g '' -G app -u ${PUID} app \
