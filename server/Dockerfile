@@ -30,7 +30,7 @@ RUN apk --no-cache add \
         "coloredlogs==5.0" \
         youtube_dl \
         pillow-avif-plugin \
-        pyheif-pillow-opener \
+        heif-image-plugin \
  && apk --no-cache del py3-pip
 
 COPY ./ /opt/app/

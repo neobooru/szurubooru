@@ -8,11 +8,9 @@ import numpy as np
 import pillow_avif
 import pyheif
 from PIL import Image
-from pyheif_pillow_opener import register_heif_opener
+import HeifImagePlugin
 
 from szurubooru import config, errors
-
-register_heif_opener()
 
 logger = logging.getLogger(__name__)
 
