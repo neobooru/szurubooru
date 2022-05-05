@@ -27,3 +27,14 @@
 
         img
             image-orientation: from-image
+
+            // Fix blurry downscaling in chrome.
+            // See: https://stackoverflow.com/questions/37906602/blurry-downscaled-images-in-chrome
+            // Could also implement this using JS `var isChrome = !!window.chrome;`, which might not need the safari css hack.
+            // 1. Applies to chrome and safari
+            @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm)
+                image-rendering: -webkit-optimize-contrast
+            // 2. Unset for safari, because it has different behavior in safari.
+            @media not all and (min-resolution:.001dpcm)
+                @supports (-webkit-appearance:none) and (stroke-color:transparent)
+                    image-rendering: unset !important;
