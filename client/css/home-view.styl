@@ -59,9 +59,14 @@
                     display: block
             .sep
                 word-spacing: 1.1em
-                background-repeat: no-repeat
-                background-position: 50% 50%
-                background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><circle cx='6' cy='6' r='2' fill='%23000000'/></svg>")
+                mask-repeat: no-repeat
+                mask-position: 50% 50%
+                mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><circle cx='6' cy='6' r='2'/></svg>")
+                -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><circle cx='6' cy='6' r='2'/></svg>")
+                background-color: black
 
     .thumbnail
         margin-right: 0.4em
+
+.darktheme #home > footer > ul > .sep
+    background-color: white
