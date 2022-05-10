@@ -87,6 +87,11 @@ input[type=radio], input[type=checkbox]
     border: 2px solid $input-enabled-border-color
     content: ''
 
+.darktheme
+    .radio:before, .checkbox:before
+        border: 2px solid darken($input-enabled-border-color, 70%)
+        background: darken($input-enabled-background-color, 75%)
+
 .radio:after
     background: $main-color
     transition: opacity 0.1s linear
@@ -174,7 +179,7 @@ input[type=time]
 .darktheme
     input[type=date],
     input[type=time]
-        border: 2px solid darken($input-enabled-border-color, 75%)
+        border: 2px solid darken($input-enabled-border-color, 70%)
         background: darken($input-enabled-background-color, 75%)
         color: $input-enabled-text-color-darktheme
         &:disabled
@@ -225,7 +230,7 @@ input[type=number]
     input[type=email],
     input[type=password],
     input[type=number]
-        border: 2px solid darken($input-enabled-border-color, 75%)
+        border: 2px solid darken($input-enabled-border-color, 70%)
         background: darken($input-enabled-background-color, 75%)
         color: $input-enabled-text-color-darktheme
         &:disabled
