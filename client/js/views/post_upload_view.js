@@ -9,21 +9,16 @@ const template = views.getTemplate("post-upload");
 const rowTemplate = views.getTemplate("post-upload-row");
 
 function _mimeTypeToPostType(mimeType) {
-    return (
-        {
-            "application/x-shockwave-flash": "flash",
-            "image/gif": "image",
-            "image/jpeg": "image",
-            "image/png": "image",
-            "image/webp": "image",
-            "image/bmp": "image",
-            "image/avif": "image",
-            "image/heif": "image",
-            "image/heic": "image",
-            "video/mp4": "video",
-            "video/webm": "video",
-        }[mimeType] || "unknown"
-    );
+    if (mimeType == "application/x-shockwave-flash") {
+        return "flash";
+    }
+
+    const type = mimeType.split("/")[0];
+    if (type in ["video", "image"]) {
+        return type;
+    } else {
+        return "unknown";
+    }
 }
 
 class Uploadable extends events.EventTarget {
