@@ -19,7 +19,7 @@
                         class: 'safety-sketchy',
                         value: 'sketchy',
                         selectedValue: ctx.post.safety,
-                        text: 'Sketchy'}) %>
+                        text: 'Questionable'}) %>
                     <%= ctx.makeRadio({
                         name: 'safety',
                         value: 'unsafe',

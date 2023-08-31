@@ -211,6 +211,10 @@ function getPrettyName(tag) {
     return tag;
 }
 
+function getSafetyName(safety) {
+    return { safe: "Safe", sketchy: "Questionable", unsafe: "Unsafe" }[safety];
+}
+
 module.exports = {
     range: range,
     formatRelativeTime: formatRelativeTime,
@@ -229,4 +233,5 @@ module.exports = {
     escapeSearchTerm: escapeSearchTerm,
     dataURItoBlob: dataURItoBlob,
     getPrettyName: getPrettyName,
+    getSafetyName: getSafetyName,
 };

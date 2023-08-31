@@ -457,6 +457,7 @@ function getTemplate(templatePath) {
             makeCssName: misc.makeCssName,
             makeNumericInput: makeNumericInput,
             formatClientLink: uri.formatClientLink,
+            getSafetyName: misc.getSafetyName
         });
         return htmlToDom(templateFactory(ctx));
     };
