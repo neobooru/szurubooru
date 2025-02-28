@@ -8,11 +8,11 @@ jobs:
     name: Build and push client/ Docker container
     runs-on: ubuntu-latest
     steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      # - name: Login to Docker Hub
+      #   uses: docker/login-action@v1
+      #   with:
+      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
+      #     password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Checkout
         uses: actions/checkout@v2
@@ -45,7 +45,7 @@ jobs:
 
       - name: Build container
         run: >
-          docker buildx build --push
+          docker buildx build
           --platform linux/amd64,linux/arm/v7,linux/arm64/v8
           --build-arg BUILD_INFO=${{ env.build_info }}
           --build-arg BUILD_DATE=${{ env.build_date }}
@@ -60,11 +60,11 @@ jobs:
     name: Build and push server/ Docker container
     runs-on: ubuntu-latest
     steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      # - name: Login to Docker Hub
+      #   uses: docker/login-action@v1
+      #   with:
+      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
+      #     password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Checkout
         uses: actions/checkout@v2
@@ -97,7 +97,7 @@ jobs:
 
       - name: Build container
         run: >
-          docker buildx build --push
+          docker buildx build
           --platform linux/amd64,linux/arm/v7,linux/arm64/v8
           --build-arg BUILD_DATE=${{ env.build_date }}
           --build-arg SOURCE_COMMIT=$GITHUB_SHA
