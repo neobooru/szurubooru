@@ -1,8 +1,6 @@
 name: Build Docker containers
 on:
   push:
-    branches:
-      - master
 jobs:
   build-client:
     name: Build and push client/ Docker container
