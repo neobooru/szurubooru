@@ -1,4 +1,5 @@
 version = 1
+revision = 1
 requires-python = ">=3.12"
 
 [[package]]
@@ -151,18 +152,6 @@ wheels = [
 ]
 
 [[package]]
-name = "heif-image-plugin"
-version = "0.7.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "piexif" },
-    { name = "pyheif" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/33/b6/8673ca961d2dc9adeef1dc675abac938bc967a325078cf7da9701e829f00/heif_image_plugin-0.7.0-py3-none-any.whl", hash = "sha256:884c94043007483a29571aff23b58762d65c522d7550d530b9462cc895187b95", size = 7242 },
-]
-
-[[package]]
 name = "humanfriendly"
 version = "10.0"
 source = { registry = "https://pypi.org/simple" }
@@ -294,12 +283,28 @@ wheels = [
 ]
 
 [[package]]
-name = "piexif"
-version = "1.1.3"
+name = "pi-heif"
+version = "0.21.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/fa/84/a3f25cec7d0922bf60be8000c9739d28d24b6896717f44cc4cfb843b1487/piexif-1.1.3.zip", hash = "sha256:83cb35c606bf3a1ea1a8f0a25cb42cf17e24353fd82e87ae3884e74a302a5f1b", size = 1011134 }
+dependencies = [
+    { name = "pillow" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f5/12/e87b1a7e5b353f885b646ee9c966be74b7db0ae9d68abc712411487353d7/pi_heif-0.21.0.tar.gz", hash = "sha256:4902cdb84e75505e1d9abdd5aff1e6dcfebe569ec825162d68a4a399a43689a4", size = 16175129 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2c/d8/6f63147dd73373d051c5eb049ecd841207f898f50a5a1d4378594178f6cf/piexif-1.1.3-py2.py3-none-any.whl", hash = "sha256:3bc435d171720150b81b15d27e05e54b8abbde7b4242cddd81ef160d283108b6", size = 20691 },
+    { url = "https://files.pythonhosted.org/packages/ce/9e/4cbc4ae59e3d8daeb25428d6b045eb31ab7748a150a6b9386a589278077a/pi_heif-0.21.0-cp312-cp312-macosx_13_0_x86_64.whl", hash = "sha256:671a57cb82430aa0c43f51f881888d69a6274236ee6f8e084270549feec7bb56", size = 620882 },
+    { url = "https://files.pythonhosted.org/packages/94/65/66108d223711c0d7ae4f1212f927f6c9b0dbc0f40db468d74d432ee50dde/pi_heif-0.21.0-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:59effc063d4715daa983ab8492e6d4bb104134a44821677185dfb99e9d16314d", size = 558003 },
+    { url = "https://files.pythonhosted.org/packages/2e/d1/d44ea8492571b8081abf6e67173394fea21e8d3558a1c82214c88de9f9f8/pi_heif-0.21.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7c14255ccfdfa7719b664b7a47493412212acd6c075d3af7036adff34be29364", size = 1133041 },
+    { url = "https://files.pythonhosted.org/packages/4d/27/67f0ea7f7adf5dbc6b49383242f42cc4d79862542719d1c7adb24cd1c103/pi_heif-0.21.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2f4f034aed9443ce811f0700dfaa0bbaae55ea331371ff85a18a66432764d353", size = 1193999 },
+    { url = "https://files.pythonhosted.org/packages/55/ed/b1df0a94a6e013b225c96e3b4060c71288cf868673facdd9400cb807e97a/pi_heif-0.21.0-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:918f863cd86e3550aa1caa3f2f6c176c922a7180025b582d5e20bd2a1e8c64d4", size = 2054233 },
+    { url = "https://files.pythonhosted.org/packages/d6/4a/63b83a82e8a2359496ef1f5d870deedc11480407618fea1818468bf0a08b/pi_heif-0.21.0-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:1733631b37ee01a4d0b2bf4f727e5a13815ccf5d02b12a1c00edb258899645b5", size = 2195163 },
+    { url = "https://files.pythonhosted.org/packages/61/78/1c79538cbd65b2ee576a193bfabe18a54dc5f573804e07225edc11024fe7/pi_heif-0.21.0-cp312-cp312-win_amd64.whl", hash = "sha256:2295ae1ed8e03fd96e988dba5bf4b179496093cb89c84bc326fcb8cf17c45b28", size = 1834304 },
+    { url = "https://files.pythonhosted.org/packages/53/43/2fb462bfd75352a991cbb39f94839058d8170b5b8cf56a2a7a45be894425/pi_heif-0.21.0-cp313-cp313-macosx_13_0_x86_64.whl", hash = "sha256:75da9aaf1b4a4c0bf56b0e3f75bbfa116c07b93be3f669b621d3a5b2ae5b4b44", size = 620886 },
+    { url = "https://files.pythonhosted.org/packages/e4/45/14e49e97ccce56f7bc1ad59019e934f4d6f4e4a6a9e8fb4884650d73d8e1/pi_heif-0.21.0-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:aa6d929305b62bb391066c2c3ee2ed219bdc5ea564f36091b50f942faf524815", size = 557997 },
+    { url = "https://files.pythonhosted.org/packages/37/6b/2f162dd87484181f4e9eba9bb9144db8aa2717e54335d6dcbaf659d7bd01/pi_heif-0.21.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b8617e40bba3b654496138ff6a0c99a14f58be012c41b2fdde9c1ba780944f14", size = 1133002 },
+    { url = "https://files.pythonhosted.org/packages/3c/0e/35714ec6c4553ca4838e4beb1099782cb08f2e6f02888e999299bea684a5/pi_heif-0.21.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:274495e3a8495899ee8a8cfce5d1d3123217aa1093bf096077cdbf78d99ce712", size = 1193905 },
+    { url = "https://files.pythonhosted.org/packages/15/9b/3744f1895e95f34a7e39ca4afd74805570392f2e508368cee267d5b9980e/pi_heif-0.21.0-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:32648f66b95cec8bada6e3928d6eeed1f6cf9c4b73c7e1924cf84eec1ee8cda8", size = 2054275 },
+    { url = "https://files.pythonhosted.org/packages/8f/37/91147518f024283e9fe245a44e205637b22accdcda831c3cdd09b64f7209/pi_heif-0.21.0-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:0c77bf122504eafc12841cfe03413048ad0af3e5f17b43ac8cfd9930830160aa", size = 2195225 },
+    { url = "https://files.pythonhosted.org/packages/cd/fd/232bc4f1a5f3451fb86bc890f01611b45202712240cac549cab88f596801/pi_heif-0.21.0-cp313-cp313-win_amd64.whl", hash = "sha256:988619231bdd89bd39093e8d942397a07b832197d197e3c89d39a8614b051645", size = 1834298 },
 ]
 
 [[package]]
@@ -430,19 +435,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/1d/b2/31537cf4b1ca988837256c910a668b553fceb8f069bedc4b1c826024b52c/pycparser-2.22.tar.gz", hash = "sha256:491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6", size = 172736 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl", hash = "sha256:c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc", size = 117552 },
-]
-
-[[package]]
-name = "pyheif"
-version = "0.8.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "cffi" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/ec/11/d63f215d8c9c416409e2d665bf7594a8886780629296b4f0d35857561c9b/pyheif-0.8.0.tar.gz", hash = "sha256:e9b4c11ebad482fc25a0804ce295b44b660cbf7829a228f56b071f325f9e0de4", size = 20503 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/fc/49/07d1c047e52fd4de1474759e202b2fd7ac99e945db0ce149af2f85be7625/pyheif-0.8.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:ac5ec62a90c4f9f96125aaebd6ac994b95895ace4427ecf34752951e1d34be96", size = 5382780 },
-    { url = "https://files.pythonhosted.org/packages/87/c4/1d0e82766657b3839993ffe411807a08623ff9affd7275533afea3cb377e/pyheif-0.8.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f98f4b1d37705418d77ef42a8ebf95b510bb3e0a9a2d9f0824f6eeb751c9e7f6", size = 5282045 },
 ]
 
 [[package]]
@@ -609,12 +601,11 @@ dependencies = [
     { name = "certifi" },
     { name = "coloredlogs" },
     { name = "gunicorn" },
-    { name = "heif-image-plugin" },
     { name = "numpy" },
+    { name = "pi-heif" },
     { name = "pillow" },
     { name = "pillow-avif-plugin" },
     { name = "psycopg2-binary" },
-    { name = "pyheif" },
     { name = "pynacl" },
     { name = "pyrfc3339" },
     { name = "pytz" },
@@ -634,16 +625,15 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "alembic", specifier = ">=0.8.5" },
+    { name = "alembic", specifier = ">=1.14.0" },
     { name = "certifi", specifier = ">=2017.11.5" },
     { name = "coloredlogs", specifier = ">=5.0" },
     { name = "gunicorn", specifier = ">=23.0.0" },
-    { name = "heif-image-plugin", specifier = ">=0.3.2" },
     { name = "numpy", specifier = ">=1.8.2" },
+    { name = "pi-heif", specifier = ">=0.21.0" },
     { name = "pillow", specifier = ">=4.3.0" },
     { name = "pillow-avif-plugin", specifier = ">=1.1.0" },
     { name = "psycopg2-binary", specifier = ">=2.6.1" },
-    { name = "pyheif", specifier = ">=0.6.1" },
     { name = "pynacl", specifier = ">=1.2.1" },
     { name = "pyrfc3339", specifier = ">=1.0" },
     { name = "pytz", specifier = ">=2018.3" },
