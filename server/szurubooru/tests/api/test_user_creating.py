@@ -28,6 +28,7 @@ def test_creating_user(user_factory, context_factory, fake_datetime):
     ):
         users.serialize_user.return_value = "serialized user"
         users.create_user.return_value = user
+        auth_user = user_factory(rank=model.User.RANK_REGULAR)
         result = api.user_api.create_user(
             context_factory(
                 params={
@@ -38,7 +39,7 @@ def test_creating_user(user_factory, context_factory, fake_datetime):
                     "avatarStyle": "manual",
                 },
                 files={"avatar": b"..."},
-                user=user_factory(rank=model.User.RANK_REGULAR),
+                user=auth_user,
             )
         )
         assert result == "serialized user"
@@ -48,7 +49,7 @@ def test_creating_user(user_factory, context_factory, fake_datetime):
         assert not users.update_user_name.called
         assert not users.update_user_password.called
         assert not users.update_user_email.called
-        users.update_user_rank.assert_called_once_with(user, "moderator")
+        users.update_user_rank.assert_called_once_with(user, "moderator", auth_user)
         users.update_user_avatar.assert_called_once_with(user, "manual", b"...")
 
 
